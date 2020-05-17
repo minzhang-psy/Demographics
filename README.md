@@ -2,7 +2,7 @@
 Collect Demographics Information. 
 
 
-## ** Motivation**
+## **Motivation**
 In the past, our lab let participant fill out dempgraphic information by paper and assign RA manually enterd those information. Creating this this demographic collection survey mainly because our lab has cumputers disconnect from internet on purpous, so we are not able to use online survey. Ultimately, this program will significantly reduce human work and error. 
 
 ## **Information collected** 
