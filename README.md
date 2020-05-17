@@ -23,16 +23,31 @@ In the past, our lab let participant fill out dempgraphic information by paper a
 ---
 
 # Stand Alone Application
+
 If a stand alone application is needed (without open python), run folloing code in terminal. This will create a folder with all the needed moudle, so that the script could be run without openning python editor. Or you can simply download the [Demographic](Demographics) folder. In the new folder created by this code, there is a [application with exec icon](Demographics/Demographics) which is the stand Alone Application you will be use.
 
 
-```
-install this project using PyPI
-$ pip install auto-py-to-exe
+### To convert the PY file to stand alone application 
 
-#Run
-$ auto-py-to-exe
+Open Terminal, install auto-py-exe if you don't have this
 ```
+pip install auto-py-to-exe
+# Set up the working directory (add directory after cd 
+cd
+```
+convert .py file to a stand alone file
+```
+auto-py-to-exe
+```
+In open window select script need to be convert. In Icon drop down menu add picture for icon (optional) 
+Press CONVERT .PY TO .EXE at bottom. Output file is in the working directory 
 
+#### If the Demographics EXE file can't open  
+Go to get info for this file set default open through Terminal 
+In terminal, type in code, with a space at the end, then type in file path
+```
+chmod +x 
+```
+Now you should be able to open this app! 
 
 
