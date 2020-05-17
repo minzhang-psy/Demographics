@@ -23,7 +23,7 @@ In the past, our lab let participant fill out dempgraphic information by paper a
 ---
 
 # Stand Alone Application
-If a stand alone application is needed (without open python), run folloing code in terminal. This will create a folder with all the needed moudle, so that the script could be run without openning python editor. Or you can simply download the Demographic folder. 
+If a stand alone application is needed (without open python), run folloing code in terminal. This will create a folder with all the needed moudle, so that the script could be run without openning python editor. Or you can simply download the [Demographic] (Demographics) folder. In the new folder created by this code, there is a [application with exec icon] (Demographics/Demographics) which is the stand Alone Application you will be use.
 ```
 install this project using PyPI
 $ pip install auto-py-to-exe
@@ -32,5 +32,5 @@ $ pip install auto-py-to-exe
 $ auto-py-to-exe
 ```
 
-In the new folder created by this code, there is a application with exec icon which is the stand Alone Application you will be use.
+
 
