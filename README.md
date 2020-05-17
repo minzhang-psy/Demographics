@@ -44,9 +44,9 @@ Press CONVERT .PY TO .EXE at bottom. Output file is in the working directory
 
 #### If the Demographics EXE file can't open  
 Go to get info for this file set default open through Terminal 
-In terminal, type in code, with a space at the end, then type in file path  
+In terminal, type in code, with a space at the end, then type in file path
 ```
-		chmod +x 
+chmod +x 
 ```
 Now you should be able to open this app! 
 
