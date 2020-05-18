@@ -1,5 +1,6 @@
 # **Demographics**
 Collect Demographics Information. 
+Information are based on NIH demographic report needed. 
 
 
 ## **Motivation**
@@ -12,15 +13,18 @@ In the past, our lab let participant fill out dempgraphic information by paper a
 |Study                      |Which study was participed, Selected from experiment folder's name|
 |ID                         |Participant ID for current study|
 |Hand                       |Which hand is participant's dominated one|
-|Gender                     ||
-|Race                       ||
-|Ethnicity                  |      |
-|School Year                | If Enrolled in College|
-|School Year explanation if choose other|If choose other in school year|
-|School Year for not current student    ||
+|Gender                     |Female, Male, other|
+|Race                       |American Indian or Alaska Native, Asian, Black or African American, Native Hawaiian or other Pacific Islander, White, More than one race, Other, Prefer not to answer|
+|Ethnicity                  |Hispanic or Latino, Not Hispanic or Latino, Prefer not to answer|
+|School Year                |If Enrolled in College\nFreshman, Sophomore, Junior, Senior, Super Senior, Other|
+|School Year explanation if choose other|If choose other in school year, type in..|
+|School Year for not current student  |Some high school, High school, Some college, College, Some/all post-graduate|
 |Sleep                      |Sleep time last night|
-|Health                     ||
+|Health                     |Current physical health compared to other people with same age on 5-point scale)
+
 ---
+
+All information need to be selected inorder to submit answer. However, for Gender, Race, Ethnicity there are "Prefer not to answer option. 
 
 # Stand Alone Application
 
