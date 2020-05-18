@@ -16,8 +16,7 @@ In the past, our lab let participant fill out dempgraphic information by paper a
 |Gender                     |Female, Male, other|
 |Race                       |American Indian or Alaska Native, Asian, Black or African American, Native Hawaiian or other Pacific Islander, White, More than one race, Other, Prefer not to answer|
 |Ethnicity                  |Hispanic or Latino, Not Hispanic or Latino, Prefer not to answer|
-|School Year                |If Enrolled in College
-Freshman, Sophomore, Junior, Senior, Super Senior, Other|
+|School Year                |If Enrolled in College, choose from below<br>Freshman, Sophomore, Junior, Senior, Super Senior, Other|
 |School Year explanation if choose other|If choose other in school year, type in..|
 |School Year for not current student  |Some high school, High school, Some college, College, Some/all post-graduate|
 |Sleep                      |Sleep time last night|
