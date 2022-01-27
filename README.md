@@ -36,7 +36,7 @@ This dropdown list reduce human error when type in study's name.
 ```
 # At bottom of .py file
  def allsubmit(self):
-        os.chdir("~/Dropbox/finalized_experiments/Demographic"). # change path to change saving path
+        os.chdir("~/finalized_experiments/Demographic"). # change path to change saving path
 ```
 
 # Stand Alone Application
