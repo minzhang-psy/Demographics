@@ -1,7 +1,20 @@
 '''
 Title: Demographic
 Author: Min Zhang
+-----------------
+Stand Alone Application:
+# install this project using PyPI
+$ pip install auto-py-to-exe
+#Run
+$ auto-py-to-exe
 
+
+header
+['Time', 'Study', 'ID', 'Hand', 'Age', 'Gender',
+                             'Race','Ethnicity', 'School Year',
+                             'School Year explanation if choose other',
+                             'School Year for not current student',
+                             'Sleep', 'Health']
 '''
 application_title='demographic'
 main_python_file='demographic.py'
@@ -11,7 +24,7 @@ import csv
 import os
 from tkinter.messagebox import *
 from tkinter import filedialog
-from datetime import date
+from datetime import datetime
 
 
 
@@ -39,20 +52,9 @@ class TkDemo():
         #This allow file choose window goes away 
         window.update()
         
-        #Drop down menu for study list
-        '''
-        #read master study list 
-        mastersheet = "/Users/mayrlab/Dropbox/finalized_experiments/Demographic/ExperimenterMasterSheet.csv"
-        file = list(csv.reader(open(mastersheet)))
-
+        #Drop down menu for study list; Change the working directory to the file that save all the experiments
         self.study = StringVar()
-        studyList = []
-        
-        for row in file:
-            studyList.append(row[0])
-        '''
-        self.study = StringVar()
-        studyList = os.listdir("/Users/mayrlab/Dropbox/finalized_experiments")
+        studyList = os.listdir("/Users/Dropbox/finalized_experiments/")
         popupMenu = OptionMenu(window, self.study, *studyList) 
         Label(window, text = 'Choose a study').place(x=width/2-70 ,y=30)
         popupMenu.place(x=width/2+50,y=30)
@@ -94,22 +96,22 @@ class TkDemo():
         label_2.grid(row = 1, column = 1)
 
         self.gender = StringVar()
-        gender_male = Radiobutton(frame_2, text = "Male",
+        gender_male = Radiobutton(frame_2, text = "Male     ",
                                   variable = self.gender,
                                   value='Male')
         gender_male.grid(row=2, column=2, sticky="w")
-        gender_female = Radiobutton(frame_2, text = "Female",
+        gender_female = Radiobutton(frame_2, text = "Female     ",
                                     variable = self.gender,
                                     value = 'Female')
-        gender_female.grid(row = 3, column = 2, sticky="w")
-        gender_other = Radiobutton(frame_2, text = "Other",
+        gender_female.grid(row = 2, column = 3, sticky="w")
+        gender_other = Radiobutton(frame_2, text = "Other     ",
                                     variable = self.gender,
                                     value = 'other')
-        gender_other.grid(row = 4, column = 2, sticky="w")
-        gender_other = Radiobutton(frame_2, text = "Prefer not to answer",
+        gender_other.grid(row = 2, column = 4, sticky="w")
+        gender_other = Radiobutton(frame_2, text = "Prefer not to answer     ",
                                     variable = self.gender,
                                     value = 'Prefer not to answer')
-        gender_other.grid(row = 5, column = 2, sticky="w")
+        gender_other.grid(row = 2, column = 5, sticky="w")
 
         #Race
         frame_3 = Frame(window)
@@ -166,12 +168,12 @@ class TkDemo():
         ethnicity2 = Radiobutton(frame_4, text = "Not Hispanic or Latino",
                                     variable = self.ethnicity,
                                     value = 'Not Hispanic or Latino')
-        ethnicity2.grid(row = 3, column = 2, sticky="w")
+        ethnicity2.grid(row = 2, column = 3, sticky="w")
 
         ethnicity4 = Radiobutton(frame_4, text = "Prefer not to answer",
                                     variable = self.ethnicity,
                                     value = 'Prefer not to answe')
-        ethnicity4.grid(row = 5, column = 2, sticky="w")
+        ethnicity4.grid(row = 2, column = 4, sticky="w")
         
         #School year
         frame_5 = Frame(window)
@@ -289,20 +291,47 @@ class TkDemo():
                                     value = '5')
         health5.grid(row = 3, column = 6)
         
+
+        #ADHD
+        frame_10 = Frame(window)
+        frame_10.pack(fill=X, padx=50, pady=50, anchor="w")
+        label_10=Label(frame_10, text="Have you been diagnosed with ADHD by a health professional?         ")
+        label_10.grid(row = 1, column = 1)
         
+        self.ADHD = StringVar()
+        ADHD_Yes = Radiobutton(frame_10, text = "Yes         ",
+                               variable = self.ADHD,
+                               value = 'Yes')
+        ADHD_Yes.grid(row = 1, column = 2, sticky="w")
+        
+        ADHD_No = Radiobutton(frame_10, text = "No",
+                               variable = self.ADHD,
+                               value = 'No')
+        ADHD_No.grid(row = 1, column = 3, sticky="w")
+
+
+        self.ADHD_Med = StringVar()
+        lable_10_1 = Label(frame_10, text = "If yes, are you currently taking ADHD medication (e.g., Adderal, Concerta, Ritalin)?")
+        lable_10_1.grid(row = 2, column = 1, sticky="w")
+        
+        ADHD_Med = Entry(frame_10, textvariable = self.ADHD_Med)
+        ADHD_Med.grid(row = 2, column = 2, sticky = "w")
+
+        #Submit Button 
         Button(window,
-               height=5, width=20,
+               height=3, width=20,
                text='Submit',
                font=("Arial", 25),
                command=self.allsubmit).pack()
-                                        
-    
+
+
         window.mainloop()
 
 
+
     def allsubmit(self):
-        os.chdir("/Users/mayrlab/Dropbox/finalized_experiments/Demographic")
-        today = date.today().strftime("%Y")
+        os.chdir("/Users/Dropbox/")    #Change working directory to where you want result to save
+        today = datetime.today().strftime("%Y")
         filename = today + "_demographic.csv"
         with open(filename,'a',encoding='utf-8') as f:
             if self.study.get() == '':
@@ -325,8 +354,10 @@ class TkDemo():
                 showinfo("Alert", 'Please enter how many hours you slept last night')
             elif self.health.get() == '':
                 showinfo("Alert", 'Please enter your health rating')
+            elif self.ADHD.get() == '':
+                showinfo("Alert", 'Please enter your ADHD self report')
             else:
-                today = date.today().strftime("%m/%d/%Y")
+                today = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
                 with open(filename,'a',encoding='utf-8') as f:
                     writer = csv.writer(f)
                     writer.writerow([today, self.study.get(), self.ID.get(), self.hand.get(),
@@ -334,7 +365,7 @@ class TkDemo():
                                      self.race.get(), self.ethnicity.get(),
                                      self.year.get(), self.otheryear.get(),
                                      self.level.get(), self.sleep.get(),
-                                     self.health.get()])
+                                     self.health.get(),self.ADHD.get(),self.ADHD_Med.get()])
                 showinfo("Thanks", "Thanks for participating in our study!")
                                                                                                                                                                                                
 TkDemo()
