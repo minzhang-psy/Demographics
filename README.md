@@ -38,7 +38,7 @@ This dropdown list reduce human error when type in study's name.
  def allsubmit(self):
         os.chdir("~/finalized_experiments/Demographic"). # change path to change saving path
 ```
-
+# you can always use psychopy to open/run the file
 # Stand Alone Application
 If a stand alone application is needed (without open python), run folloing code in terminal. This will create a folder with all the needed modules, so that the script could be run without openning python editor. Or you can simply download the [Demographic](Demographics) folder. In the new folder created by this code, there is a [application with exec icon](Demographics/Demographics) which is the stand Alone Application you will be use.
 
